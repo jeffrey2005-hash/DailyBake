@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bake Shop</title>
+    <link rel="stylesheet" href="bakery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body> 
+
+<header>
+
+    <div class="Logo">
+        <img src="lugu2.png" alt="Daily Bake Logo" onclick="window.location.href='index.html'">
+        <h1> Daily Bake!<br>
+        <p> Freshly Baked, just for you </p>
+        </h1>
+        
+    </div>
+
+    <nav class="TopBar">
+        <a href="index.html"><i class="fa fa-home" style="font-size:28px"></i></a>
+        <div class="cart" id="cartBtn">
+            <i class="fa fa-shopping-cart" style="font-size:28px"></i>
+            <span id="cartCount">0</span>
+        </div>
+        
+        
+    </nav>
+
+</header>
+
+
+
+<div class="cart-sidebar" id="cartSidebar">
+
+    <div class="cart-header">
+        <h2>Your Cart</h2>
+        <span id="closeCart">&times;</span>
+    </div>
+
+    <div class="cart-items" id="cartItems">
+        <p class="empty-cart">Your cart is empty</p>
+    </div>
+
+    <div class="cart-footer">
+        <h3>Total: ₱<span id="cartTotal">0</span></h3>
+
+        <button id="checkoutBtn" class="checkout-btn">
+            Checkout
+        </button>
+    </div>
+
+</div>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<section class="MainPage">
+
+    <div class="background"></div>
+
+    <div class="Message">
+        <h3>Daily Bake</h3>
+
+        <h2>Taste the warmth  <br>
+            of every bite!</h2>
+        
+        <p>
+            From our oven to your table, <br>
+            we bring you the freshest bakes made with love.
+        </p>
+
+        <button onclick="window.location.href='allproduct.html'">See all products</button>
+    
+    </div>
+
+    <div class="BakeImage">
+        <div class="slide"> 
+            <img src="products/Classic Butter Croissant.jpg" class="active">
+            <img src="products/floss.jpg">
+            <img src="products/cheesebun.jpg">
+            <img src="products/muffins.jpg">
+            <img src="products/Chocolate Tart.jpg">
+        </div>  
+
+        <div class="lipat">
+            <span class="next">&#10095;</span>
+            <span class="prev">&#10094;</span>
+        </div>
+
+        <div class="tuldok">
+            <div class="dot active" attr='0' onclick="switchImage(this)"></div>
+            <div class="dot" attr='1' onclick="switchImage(this)"></div>
+            <div class="dot" attr='2' onclick="switchImage(this)"></div>
+            <div class="dot" attr='3' onclick="switchImage(this)"></div>
+            <div class="dot" attr='4' onclick="switchImage(this)"></div>
+	    </div>
+    </div>
+
+</section>
+
+
+<section class="TopProducts">
+    <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle3"></div>
+        <div class="circle circle4"></div>
+        <div class="circle circle5"></div>
+        <div class="circle circle6"></div>
+        <div class="circle circle7"></div>
+        <div class="circle circle8"></div>
+        <div class="circle circle9"></div>
+        <div class="circle circle10"></div>
+        <div class="circle circle11"></div>
+        <div class="circle circle12"></div>
+        <div class="circle circle13"></div>
+        <div class="circle circle14"></div>
+        <div class="circle circle15"></div>
+        <div class="circle circle16"></div>
+
+
+    <h1>Top Products</h1>
+    <p>Discover our selection of artisan breads, pastries, and baked goods made with the finest ingredients</p>
+
+    <div class="Grid">
+        <div class="card">
+            <img src="products/Classic Butter Croissant.jpg">
+
+            <div class="cardinfo">
+                <h3>Classic Butter Croissant</h3>
+                
+
+                <div class="cardbot">
+                    <h4 class="price">₱90</h4>
+                    <button
+                    class="add-cart"
+                    data-name="Classic Butter Croissant"
+                    data-image="products/Classic Butter Croissant.jpg"
+                    data-price="90">
+                    Add <i class="fa fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="products/Garlic Bread.jpg">
+
+            <div class="cardinfo">
+                <h3>Garlic Bread</h3>
+                
+
+                <div class="cardbot">
+                    <h4 class="price">₱120</h4>
+                    <button
+                    class="add-cart"
+                    data-name="Garlic Bread"
+                    data-image="products/Garlic Bread.jpg"
+                    data-price="120">
+                    Add <i class="fa fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="products/cheesebun.jpg">
+
+            <div class="cardinfo">
+                <h3> Cheese Bun</h3>
+                
+
+                <div class="cardbot">
+                    <h4 class="price">₱65</h4>
+                    <button
+                    class="add-cart"
+                    data-name="Cheese Bun"
+                    data-image="products/cheesebun.jpg"
+                    data-price="65">
+                    Add <i class="fa fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="products/MangoBravo_1.webp">
+
+            <div class="cardinfo">
+                <h3>MangoBravo</h3>
+                
+
+                <div class="cardbot">
+                    <h4 class="price">₱1,250</h4>
+                    <button
+                    class="add-cart"
+                    data-name="Mango Bravo"
+                    data-image="products/MangoBravo_1.webp"
+                    data-price="1250">
+                    Add <i class="fa fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="products/TIRAMISU.jpg">
+
+            <div class="cardinfo">
+                <h3>Tiramisu Cake</h3>
+                
+
+                <div class="cardbot">
+                    <h4 class="price">₱950</h4>
+                    <button
+                    class="add-cart"
+                    data-name="Tiramisu Cake"
+                    data-image="products/TIRAMISU.jpg"
+                    data-price="950">
+                    Add <i class="fa fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="products/Mango Tart.webp">
+
+            <div class="cardinfo">
+                <h3>Mango Tart</h3>
+                
+
+                <div class="cardbot">
+                    <h4 class="price">₱180</h4>
+                    <button
+                    class="add-cart"
+                    data-name="Mango Tart"
+                    data-image="products/Mango Tart.webp"
+                    data-price="180">
+                    Add <i class="fa fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="products/Blueberry Muffin.jpg" >
+
+            <div class="cardinfo">
+                <h3>Blueberry Muffin</h3>
+                
+
+                <div class="cardbot">
+                    <h4 class="price">₱85</h4>
+                    <button
+                    class="add-cart"
+                    data-name="Blueberry Muffin"
+                    data-image="products/Blueberry Muffin.jpg"
+                    data-price="85">
+                    Add <i class="fa fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="products/Ham and Cheese Croissant.webp" alt="Bread">
+
+            <div class="cardinfo">
+                <h3>Ham&Cheese Croissant</h3>
+                
+
+                <div class="cardbot">
+                    <h4 class="price">₱130</h4>
+                    <button
+                    class="add-cart"
+                    data-name="Ham&Cheese Croissant"
+                    data-image="products/Ham and Cheese Croissant.webp"
+                    data-price="130">
+                    Add <i class="fa fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="viewmore">
+        <div class="viewmorebtn">
+            <button onclick="window.location.href='allproduct.html'"> View more Products</button>
+        </div>
+    </div>
+    
+</section> 
+
+<footer>
+
+    <div class="foot">
+
+        <div class="footinfo">
+            <h2>🥖 Daily Bake</h2>
+            <p>
+                Freshly baked breads, pastries, and desserts made with love every day.
+            </p>
+        </div>
+
+        <div class="footinfo">
+            <h3>Contact Info</h3>
+
+            <p>📍 Imus, Cavite, Philippines</p>
+            <p>📞 +63 912 345 6789</p>
+            <p>📧 dailybake@email.com</p>
+        </div>
+
+        <div class="footinfo">
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+            <a href="bakeryaboutus.html">About Us</a>
+            <a href="bakerycontactus.html">Contact Us</a>
+        </div>
+
+        <div class="footinfo">
+            <h3>Business Hours</h3>
+
+            <p>Monday - Saturday</p>
+            <p>7:00 AM - 7:00 PM</p>
+            <p>Sunday - Closed</p>
+        </div>
+
+    </div>
+
+    <div class="footbot">
+        <p>
+            © 2026 Daily Bake. Created by 7 Student Developers.
+        </p>
+    </div>
+
+</footer>
+<script src="bakery.js"></script>
+
+</body>
+</html>
